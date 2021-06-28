@@ -31,7 +31,46 @@ namespace DemoApp
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "DemoApp", Version = "v1"}); });
 
-            services.AddBackgroundTaskr()
+            services.AddBackgroundTaskr(options =>
+                {
+                    options.EnrichCreate = (activity, eventName, rawObject) =>
+                    {
+                        switch (eventName)
+                        {
+                            case "OnStartActivity" when rawObject is string taskName:
+                            {
+                                activity.SetTag("custom_task_name", taskName);
+                                break;
+                            }
+                            case "OnStopActivity" when rawObject is string taskName:
+                            {
+                                activity.SetTag("total_milliseconds", activity.Duration.TotalMilliseconds);
+                                break;
+                            }
+                        }
+                    };
+                    options.EnrichRun = (activity, eventName, rawObject) =>
+                    {
+                        switch (eventName)
+                        {
+                            case "OnStartActivity" when rawObject is string taskName:
+                            {
+                                activity.SetTag("custom_task_name", taskName);
+                                break;
+                            }
+                            case "OnException" when rawObject is Exception exception:
+                            {
+                                activity.SetTag("stack_trace", exception.StackTrace);
+                                break;
+                            }
+                            case "OnStopActivity" when rawObject is string taskName:
+                            {
+                                activity.SetTag("total_milliseconds", activity.Duration.TotalMilliseconds);
+                                break;
+                            }
+                        }
+                    };
+                })
                 .UsingSlackErrorNotifications();
             
             services.AddOpenTelemetryTracing(
