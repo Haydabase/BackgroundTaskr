@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExistingCodebase", "Existin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haydabase.BackgroundTaskr", "Haydabase.BackgroundTaskr\Haydabase.BackgroundTaskr.csproj", "{455909AD-F23E-4153-B09A-0F1191A29E27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "DemoApp\DemoApp.csproj", "{05765E29-B4B0-4B5F-B28C-67C6C107F3C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{455909AD-F23E-4153-B09A-0F1191A29E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{455909AD-F23E-4153-B09A-0F1191A29E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{455909AD-F23E-4153-B09A-0F1191A29E27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05765E29-B4B0-4B5F-B28C-67C6C107F3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05765E29-B4B0-4B5F-B28C-67C6C107F3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05765E29-B4B0-4B5F-B28C-67C6C107F3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05765E29-B4B0-4B5F-B28C-67C6C107F3C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
