@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Haydabase.BackgroundTaskr;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DemoApp.Controllers
 {
@@ -25,16 +26,17 @@ namespace DemoApp.Controllers
         [HttpPost("background-tasks/{name}")]
         public IActionResult CreateBackgroundTask(string name)
         {
-            _backgroundTaskr.CreateBackgroundTask(name, _ => Task.Delay(TimeSpan.FromSeconds(2)));
+            _backgroundTaskr.CreateBackgroundTask(name,
+                x => x.GetRequiredService<IDelayer>().DelayAsync(TimeSpan.FromSeconds(2)));
             return Ok();
         }
         
         [HttpPost("erroring-background-tasks/{name}")]
         public IActionResult CreateErroringBackgroundTask(string name, string? message = null)
         {
-            _backgroundTaskr.CreateBackgroundTask(name, async _ =>
+            _backgroundTaskr.CreateBackgroundTask(name, async x =>
             {
-                await Task.Delay(TimeSpan.FromSeconds(1));
+                await x.GetRequiredService<IDelayer>().DelayAsync(TimeSpan.FromSeconds(1));
                 throw new Exception(message ?? "Test Erroring Background Task");
             });
             return Ok();

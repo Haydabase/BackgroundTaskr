@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "DemoApp\DemoApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haydabase.BackgroundTaskr.SlackErrorNotifier", "Haydabase.BackgroundTaskr.SlackErrorNotifier\Haydabase.BackgroundTaskr.SlackErrorNotifier.csproj", "{BEDF8CE7-49FA-464A-B710-E8888290EB61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haydabase.BackgroundTaskr.Testing", "Haydabase.BackgroundTaskr.Testing\Haydabase.BackgroundTaskr.Testing.csproj", "{69274BBA-557D-47BD-A0DD-23933344700E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp.UnitTests", "DemoApp.UnitTests\DemoApp.UnitTests.csproj", "{8F0E828F-CB86-4EC2-8FCB-6244D51B43DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{BEDF8CE7-49FA-464A-B710-E8888290EB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEDF8CE7-49FA-464A-B710-E8888290EB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEDF8CE7-49FA-464A-B710-E8888290EB61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69274BBA-557D-47BD-A0DD-23933344700E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69274BBA-557D-47BD-A0DD-23933344700E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69274BBA-557D-47BD-A0DD-23933344700E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69274BBA-557D-47BD-A0DD-23933344700E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0E828F-CB86-4EC2-8FCB-6244D51B43DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0E828F-CB86-4EC2-8FCB-6244D51B43DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0E828F-CB86-4EC2-8FCB-6244D51B43DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0E828F-CB86-4EC2-8FCB-6244D51B43DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
