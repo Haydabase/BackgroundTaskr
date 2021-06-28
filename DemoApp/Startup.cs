@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 
 namespace DemoApp
 {
@@ -31,6 +33,14 @@ namespace DemoApp
 
             services.AddBackgroundTaskr()
                 .UsingSlackErrorNotifications();
+            
+            services.AddOpenTelemetryTracing(
+                x => x
+                    .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("BackgroundTaskr.DemoApp"))
+                    .AddBackgroundTaskrInstrumentation()
+                    .AddAspNetCoreInstrumentation()
+                    .AddConsoleExporter()
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
