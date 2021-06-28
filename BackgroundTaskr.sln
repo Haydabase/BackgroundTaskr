@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExistingCodebase", "ExistingCodebase\ExistingCodebase.csproj", "{479A384A-800C-409D-AAC2-9EE9C0B87E02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haydabase.BackgroundTaskr", "Haydabase.BackgroundTaskr\Haydabase.BackgroundTaskr.csproj", "{455909AD-F23E-4153-B09A-0F1191A29E27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{479A384A-800C-409D-AAC2-9EE9C0B87E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479A384A-800C-409D-AAC2-9EE9C0B87E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479A384A-800C-409D-AAC2-9EE9C0B87E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455909AD-F23E-4153-B09A-0F1191A29E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455909AD-F23E-4153-B09A-0F1191A29E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455909AD-F23E-4153-B09A-0F1191A29E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455909AD-F23E-4153-B09A-0F1191A29E27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
