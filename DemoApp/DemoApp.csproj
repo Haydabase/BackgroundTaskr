@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ExistingCodebase\ExistingCodebase.csproj" />
       <ProjectReference Include="..\Haydabase.BackgroundTaskr\Haydabase.BackgroundTaskr.csproj" />
     </ItemGroup>
 

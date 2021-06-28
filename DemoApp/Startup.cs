@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Haydabase.BackgroundTasks.ExistingCodebase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,8 +29,22 @@ namespace DemoApp
         {
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "DemoApp", Version = "v1"}); });
+
+            services.AddBackgroundTaskr()
+                .UsingMiddleware(async (serviceProvider, name, next) =>
+                {
+                    try
+                    {
+                        await next();
+                    }
+                    catch (Exception exception)
+                    {
+                        await serviceProvider.GetRequiredService<ISlackNotifier>().NotifyTaskFailure(name, exception);
+                        throw;
+                    }
+                });
             
-            services.AddBackgroundTaskr();
+            services.AddSingleton<ISlackNotifier, DummySlackNotifier>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
