@@ -21,7 +21,8 @@ namespace Haydabase.BackgroundTaskr
                 {
                     // Must use newly resolved dependencies in our background task to avoid accessing disposed scoped services.
                     using var scope = _serviceProvider.CreateScope();
-                    await runTask(scope.ServiceProvider);
+                    var invoker = scope.ServiceProvider.GetRequiredService<IMiddlewareInvoker>();
+                    await invoker.InvokeAsync(name, () => runTask(scope.ServiceProvider));
                 }
                 catch
                 {

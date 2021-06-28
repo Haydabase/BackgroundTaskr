@@ -9,6 +9,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static void AddBackgroundTaskr(this IServiceCollection services)
         {
             services.TryAddSingleton<IBackgroundTaskr, BackgroundTaskFactory>();
+            services.TryAddScoped<IMiddlewareInvoker, MiddlewareInvoker>();
         }
     }
 }
