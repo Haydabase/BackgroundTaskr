@@ -1,11 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Haydabase.BackgroundTasks.ExistingCodebase;
 using Microsoft.Extensions.Logging;
 
-namespace DemoApp
+namespace Haydabase.BackgroundTaskr.SlackErrorNotifier
 {
-    public class DummySlackNotifier : ISlackNotifier
+    internal class DummySlackNotifier : ISlackNotifier
     {
         private readonly ILogger<DummySlackNotifier> _logger;
 
